@@ -27,21 +27,24 @@
     <div class="container-login center-align">
         <div style="margin:15px 0;">
             <i class="zmdi zmdi-account-circle zmdi-hc-5x"></i>
-            <p>iniciar sesion</p>
+            <p>Iniciar sesión</p>
         </div>
-        <form action="conexion.php" method="post">
+        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
             <div class="input-field">
-                <input type="text" class="validate" name="usuario">
+                <input type="text" class="validate" name="usuario" required>
                 <label for="UserName"><i class="zmdi zmdi-account"></i>&nbsp; Usuario</label>
             </div>
             <div class="input-field col s12">
-                <input type="password" class="validate" name="contraseña">
+                <input type="password" class="validate" name="contraseña" required>
                 <label for="Password"><i class="zmdi zmdi-lock"></i>&nbsp; Contraseña</label>
             </div>
             <button class="waves-effect waves-teal btn-flat">Ingresar &nbsp; <i class="zmdi zmdi-mail-send"></i></button>
+            <?php if(!empty($errores)): ?>
+              <ul>
+                <?php echo $errores; ?>
+              </ul>
+            <?php endif; ?>
         </form>
-
-
     </div>
     <script src="js/sweetalert.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
