@@ -4,7 +4,7 @@
 
   // Verificación de sesión usuario
   if (isset($_SESSION['usuario'])) {
-    header('Location: home.php');
+    header('Location: home');
   }
 
   $errores = '';
@@ -15,12 +15,12 @@
     $password = hash('sha512', $password);
 
     try {
-      $conexion = new PDO('mysql:host=localhost;dbname=session', 'root', '12345678');
+      $conexion = new PDO('mysql:host=localhost;dbname=alumno', 'root', '12345678');
     } catch (PDOException $e) {
       echo "Error: " .$e.getMessage();
     }
 
-    $statement = $conexion -> prepare('SELECT * FROM usuarios WHERE username = :username AND password = :password');
+    $statement = $conexion -> prepare('SELECT * FROM usuario WHERE username = :username AND password = :password');
     $statement -> execute(array(
       ':username' => $usuario,
       ':password' => $password
@@ -29,11 +29,17 @@
     $resultado = $statement->fetch();
 
     if ($resultado !== false) {
+
       echo "logueo exitoso";
-      $_SESSION['usuario'] = $usuario;
-      header('Location: home.php');
+      $_SESSION['usuario'] = $resultado['username'];
+      $_SESSION['tipo_usuario'] = $resultado['type_user'];
+      $_SESSION['id'] = $resultado['id'];
+      $_SESSION['codigo'] = $resultado['code'];
+
+      header('Location: home');
     } else {
       $errores .= '<li style="color:red;">El nombre de usuario o contraseña son erróneos</li>';
+      header('Location: index');
     }
   }
 

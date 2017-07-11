@@ -9,7 +9,7 @@ if (isset($_SESSION['usuario'])) {
 
   require 'views/footer.view.php';
 } else {
-  header('Location: index.php');
+  header('Location: index');
 }
 
 

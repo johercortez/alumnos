@@ -7,7 +7,7 @@
                           Somos una Facultad formadora de profesionales en las ingenierías de Sistemas y de Software, así como en Gestión y Gobierno de Tecnologías de Información, contribuyendo al desarrollo de la sociedad.
                       </p>
                   </div>
-                  <div class="col l4 offset-l2 s12">
+                  <div class="col l6 s12">
                       <h5 class="white-text">Visión</h5>
                       <p class="grey-text text-lighten-4">Ser una Facultad referente de excelencia y calidad en la formación profesional
                        e investigación en las ingenierías de Sistemas, de Software y de Ciencias de la Computación, reconocida nacional e internacionalmente, que aporta el desarrollo sostenible y tecnológico del país.</p>

@@ -23,17 +23,17 @@ $(document).ready(function(){
     $('.btn-ExitSystem').on('click', function(e){
         e.preventDefault();
         swal({
-            title: "You want out of the system?",
-            text: "The current session will be closed and will leave the system",
+            title: "Deseas cerrar sesión?",
+            text: "La sesión actual se cerrará y dejará el sistema",
             type: "warning",
             showCancelButton: true,
             confirmButtonColor: "#DD6B55",
-            confirmButtonText: "Yes",
+            confirmButtonText: "Si",
             animation: "slide-from-top",
             closeOnConfirm: false,
-            cancelButtonText: "Cancel"
+            cancelButtonText: "No"
         }, function(){
-            window.location='index.html'; 
+            window.location='logout.php'; 
         });
     });
     $('.btn-Search').on('click', function(e){

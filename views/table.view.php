@@ -5,13 +5,14 @@
             <table>
                 <thead>
                     <tr>
-                        <th>ALUMNO</th>
-                        <th>PRACTICA 1</th>
-                        <th>PRACTICA 2</th>
-                        <th>PRACTICA 3</th>
-                        <th>PARCIAL 1</th>
-                        <th>PARCIAL 2</th>
-                        <th>PERMANENTE</th>
+                        <th style="width: 300px; text-align: center;">ALUMNO</th>
+                        <th>PR. 1</th>
+                        <th>PR. 2</th>
+                        <th>PR. 3</th>
+                        <th>PA. 1</th>
+                        <th>PA. 2</th>
+                        <th>PERM.</th>
+                        <th>P.G.</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -23,6 +24,27 @@
                         <td><input type="text" name="nota"></td>
                         <td><input type="text" name="nota"></td>
                         <td><input type="text" name="nota"></td>
+                        <td><input type="text" name="nota"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="nota"></td>
+                        <td><input type="text" name="nota"></td>
+                        <td><input type="text" name="nota"></td>
+                        <td><input type="text" name="nota"></td>
+                        <td><input type="text" name="nota"></td>
+                        <td><input type="text" name="nota"></td>
+                        <td><input type="text" name="nota"></td>
+                        <td><input type="text" name="nota"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="nota"></td>
+                        <td><input type="text" name="nota"></td>
+                        <td><input type="text" name="nota"></td>
+                        <td><input type="text" name="nota"></td>
+                        <td><input type="text" name="nota"></td>
+                        <td><input type="text" name="nota"></td>
+                        <td><input type="text" name="nota"></td>
+                        <td><input type="text" name="nota"></td>
                     </tr>
                     <tr>
                         <td><input type="text" name="nota"></td>
@@ -35,22 +57,6 @@
                     </tr>
                     <tr>
                         <td><input type="text" name="nota"></td>
-                        <td><input type="text" name="nota"></td>
-                        <td><input type="text" name="nota"></td>
-                        <td><input type="text" name="nota"></td>
-                        <td><input type="text" name="nota"></td>
-                        <td><input type="text" name="nota"></td>
-                        <td><input type="text" name="nota"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="nota"></td>
-                        <td><input type="text" name="nota"></td>
-                        <td><input type="text" name="nota"></td>
-                        <td><input type="text" name="nota"></td>
-                        <td><input type="text" name="nota"></td>
-                        <td><input type="text" name="nota"></td>
-                    </tr>
-                    <tr>
                         <td><input type="text" name="nota"></td>
                         <td><input type="text" name="nota"></td>
                         <td><input type="text" name="nota"></td>
