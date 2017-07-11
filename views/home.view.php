@@ -44,19 +44,3 @@
         </ul>
     </article>
 </div>
-<script>
-    fetch('/promedio.php', {
-        method: 'POST',
-        body: {
-            username: 'prueba'
-        }
-    })
-        .then(res => {
-            var txt = res.json();
-            // console.log(res.json())
-            console.log(txt)
-        })
-        .catch(function(err){
-            console.log(err)
-        })
-</script>

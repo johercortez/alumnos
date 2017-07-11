@@ -10,9 +10,12 @@
 	<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
     <link rel="stylesheet" href="css/sweetalert.css">
 	<link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 <body>
-    <?php require 'headerLateral.view.php' ?>
+    <?php
+        require 'headerLateral.view.php' 
+    ?>
     <section class="ContentPage full-width">
         <div class="ContentPage-Nav full-width">
             <ul class="full-width">

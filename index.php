@@ -1,5 +1,8 @@
 <?php
 
+  require 'config.php';
+  require 'functions.php';
+
   session_start();
 
   // Verificación de sesión usuario
@@ -11,19 +14,15 @@
 
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $usuario = filter_var(strtoLower($_POST['usuario']), FILTER_SANITIZE_STRING);
-    $password = $_POST['contraseña'];
-    $password = hash('sha512', $password);
+    $contraseña = $_POST['contraseña'];
+    $contraseña = hash('sha512', $contraseña);
 
-    try {
-      $conexion = new PDO('mysql:host=localhost;dbname=alumno', 'root', '12345678');
-    } catch (PDOException $e) {
-      echo "Error: " .$e.getMessage();
-    }
+    $conexion = conexion($bd_config);
 
-    $statement = $conexion -> prepare('SELECT * FROM usuario WHERE username = :username AND password = :password');
+    $statement = $conexion -> prepare('SELECT * FROM usuario WHERE usuario = :username AND contraseña = :password');
     $statement -> execute(array(
       ':username' => $usuario,
-      ':password' => $password
+      ':password' => $contraseña
     ));
 
     $resultado = $statement->fetch();
@@ -31,10 +30,16 @@
     if ($resultado !== false) {
 
       echo "logueo exitoso";
-      $_SESSION['usuario'] = $resultado['username'];
-      $_SESSION['tipo_usuario'] = $resultado['type_user'];
-      $_SESSION['id'] = $resultado['id'];
-      $_SESSION['codigo'] = $resultado['code'];
+
+      $_SESSION['usuario'] = $resultado['usuario'];
+      $_SESSION['tipo_usuario'] = $resultado['tipo_usuario'];
+      $_SESSION['id_usuario'] = $resultado['id_usuario'];
+      $_SESSION['nombre'] = $resultado['nombre'];
+      $_SESSION['apellido'] = $resultado['apellido'];
+      $_SESSION['dni'] = $resultado['dni'];
+      $_SESSION['direccion'] = $resultado['direccion'];
+      $_SESSION['telefono'] = $resultado['telefono'];
+      $_SESSION['email'] = $resultado['email'];
 
       header('Location: home');
     } else {
