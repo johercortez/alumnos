@@ -1,35 +1,37 @@
 <?php 
+
 	session_start();
-	
-	header('Content-Type: application/json');
 
-	$id_nota = $_POST['id_nota'];
-	$pr1 = $_POST['pr1'];
-	$pr2 = $_POST['pr2'];
-	$pr3 = $_POST['pr3'];
-	$pa1 = $_POST['pa1'];
-	$pa2 = $_POST['pa2'];
-	$per = $_POST['per'];
-	$pro = $_POST['pro'];
-
-	try {
-
+	if ($_SESSION['usuario']) {
+		
 		require 'config.php';
-		require 'functions.php';
 
-		$conexion = conexion($bd_config);
+		$connect = new mysqli('localhost', $bd_config['usuario'], $bd_config['pass'], $bd_config['basededatos']);
 
-		$resultado = guardar_nota($pr1, $pr2, $pr3, $pa1, $pa2, $pe, $pro, $id_nota, $conexion);
+		$id = $_POST['id_nota'];
+		$pr1 = $_POST['pr1'];
+		$pr2 = $_POST['pr2'];
+		$pr3 = $_POST['pr3'];
+		$pa1 = $_POST['pa1'];
+		$pa2 = $_POST['pa2'];
+		$per = $_POST['per'];
+		$pro = $_POST['pro'];
 
-		$retour = array();
+		$up = $connect -> query("UPDATE nota SET primer_practica='$pr1', segunda_practica='$pr2', tercer_practica= '$pr3', Primer_Parcial='$pa1', Segundo_Parcial='$pa2', nota_permanente='$per', promedio='$pro' WHERE id_nota='$id' ");
 
-		$retour['success'] = $resultado['access'];
-		// $retour['results']['vols'] = array("paris", "tolouse");
+		$response = array();
 
-
-		echo json_encode($retour);
-	} catch (Excepcion $e) {
-
+		if ($up) {
+			$response['success'] = true;
+			echo json_encode($response);
+		} else {
+			$response['success'] = false;
+			echo json_encode($response);
+		}
+	} else {
+		header('Location: index');
+		$response = array();
+		$response['success'] = false;
 	}
 
  ?>

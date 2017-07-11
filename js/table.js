@@ -7,7 +7,7 @@
             url: 'promedio.php',
             async: true,
             headers: {
-                'Content-type': undefined
+                'Content-type': 'application/x-www-form-urlencoded'
             },
             data:data
         })

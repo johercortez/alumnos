@@ -6,7 +6,7 @@
         </header>
         <div class="NavLateral-Nav">
             <ul class="full-width">
-                 <li>
+                <li>
                     <a href="home" class="waves-effect waves-light"><i class="zmdi zmdi-desktop-mac zmdi-hc-fw"></i>INICIO</a>
                 </li>
                 <li class="NavLateralDivider"></li>
@@ -140,7 +140,8 @@
                       <li class="NavLateralDivider"></li>
                   </ul>
                 </li>
-                
+                <li class="NavLateralDivider"></li>
+                <li><a class="waves-effect waves-light">Nuevo usuario</a></li>                
             </ul>
         </div>
     </div>
