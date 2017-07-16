@@ -143,7 +143,7 @@
                 <li class="NavLateralDivider"></li>
                 <?php if($_SESSION['tipo_usuario'] === 'secretaria'): ?>
                   <li><a class="waves-effect waves-light" href="nuevo_usuario">Nuevo Usuario</a></li>
-                <?php endif; ?>               
+                <?php endif; ?>
             </ul>
         </div>
     </div>

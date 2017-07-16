@@ -10,7 +10,6 @@ if (isset($_SESSION['usuario'])) {
 
   $conexion = conexion($bd_config);
 
-
   if ($_SESSION['tipo_usuario'] === 'secretaria') {
     $course = tipo_promedio($_GET['curso'], $conexion);
     $notas = obtener_notas($_GET['ciclo'], $_GET['curso'], $conexion);

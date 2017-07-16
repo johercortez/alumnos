@@ -18,7 +18,7 @@
     $contraseña = hash('sha512', $contraseña);
 
     $conexion = conexion($bd_config);
-
+    
     $statement = $conexion -> prepare('SELECT * FROM usuario WHERE usuario = :username AND contrasena = :password');
     $statement -> execute(array(
       ':username' => $usuario,
