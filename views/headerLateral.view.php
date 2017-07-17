@@ -10,6 +10,12 @@
                     <a href="home" class="waves-effect waves-light"><i class="zmdi zmdi-desktop-mac zmdi-hc-fw"></i>INICIO</a>
                 </li>
                 <li class="NavLateralDivider"></li>
+                <li><a class="waves-effect waves-light" href="perfil">PERFIL</a></li>
+                <?php if($_SESSION['tipo_usuario'] === 'secretaria'): ?>
+                  <li class="NavLateralDivider"></li>
+                  <li><a class="waves-effect waves-light" href="nuevo_usuario">NUEVO USUARIO</a></li>
+                <?php endif; ?>
+                <li class="NavLateralDivider"></li>
                 <li><a class="waves-effect waves-light">CICLOS</a></li>
                 <li>
                   <a style="padding-left: 30px;" href="#" class="NavLateral-DropDown  waves-effect waves-light"> <i class="zmdi zmdi-chevron-down NavLateral-CaretDown"></i>I</a>
@@ -140,10 +146,6 @@
                       <li class="NavLateralDivider"></li>
                   </ul>
                 </li>
-                <li class="NavLateralDivider"></li>
-                <?php if($_SESSION['tipo_usuario'] === 'secretaria'): ?>
-                  <li><a class="waves-effect waves-light" href="nuevo_usuario">Nuevo Usuario</a></li>
-                <?php endif; ?>
             </ul>
         </div>
     </div>

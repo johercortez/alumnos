@@ -35,7 +35,7 @@
 		} else {
 			$response = array();
 			$response['success'] = false;
-			$response['message'] = 'Las contraseñas ingresadas no son iguales';
+			$response['message'] = 'Las contraseñas ingresadas no coinciden';
 			echo json_encode($response);
 		}
 		

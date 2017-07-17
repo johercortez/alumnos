@@ -21,7 +21,7 @@
             <ul class="full-width">
                 <li><a href="#" class="tooltipped waves-effect waves-light btn-ExitSystem" data-position="bottom" data-delay="50" data-tooltip="Cerrar Sesión"><i class="zmdi zmdi-power"></i></a></li>
                 <li class="btn-MobileMenu ShowHideMenu"><a href="#" class="tooltipped waves-effect waves-light" data-position="bottom" data-delay="50" data-tooltip="Menu"><i class="zmdi zmdi-more-vert"></i></a></li>
-                <li><?php echo $_SESSION['nombre'].' '.$_SESSION['apellido']; ?></li>
-                <li><figure><img src="assets/img/user.png" alt="UserImage"></figure></li>
+                <li><a style="font-size: 18px; display: inline;" href="perfil"><?php echo $_SESSION['nombre'].' '.$_SESSION['apellido']; ?></a></li>
+                <li><a href="perfil"><figure><img src="assets/img/user.png" alt="UserImage"></figure></a></li>
             </ul>
         </div>
