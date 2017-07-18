@@ -4,24 +4,24 @@
 		<h4 class="Title_course center-align" data-type-course="<?php echo $course['tipo_calificacion'] ?>"><?php echo $course['nombre_curso'] ?> - NOTAS</h4>
 		<br>
 		<?php require './views/formBuscar.view.php' ?>
-		<br>
-		<div class="col s12">
-			<table>
-				<thead>
-					<tr>
-						<th style="width: 300px; text-align: center;">ALUMNO</th>
-						<th>PR. 1</th>
-						<th>PR. 2</th>
-						<th>PR. 3</th>
-						<th>PA. 1</th>
-						<th>PA. 2</th>
-						<th>PERM.</th>
-						<th>P.G.</th>
-						<th></th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php foreach ($notas as $nota): ?>
+		<p><?php echo $title; ?></p>
+		<?php if (!empty($results)): ?>
+			<div class="col s12">
+				<table>
+					<thead>
+						<tr>
+							<th style="width: 300px; text-align: center;">ALUMNO</th>
+							<th>PR. 1</th>
+							<th>PR. 2</th>
+							<th>PR. 3</th>
+							<th>PA. 1</th>
+							<th>PA. 2</th>
+							<th>PERM.</th>
+							<th>P.G.</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
 						<tr class="fila_nota" data-student="<?php echo $nota['id_usuario'] ?>" data-nota="<?php echo $nota['id_nota'] ?>" >
 							<td style="width: 60px;" ><input type="text" name="nota" value="<?php echo $nota['nombre_apellido']; ?>"></td>
 							<td style="width: 60px;" ><input class="pr1_<?php echo $nota['id_nota']; ?>" type="number" min="0" max="20" name="nota" value="<?php echo $nota['primer_practica']; ?>"></td>
@@ -33,10 +33,10 @@
 							<td style="width: 60px;" ><input class="pro_<?php echo $nota['id_nota']; ?>" type="number" min="0" max="20" name="nota" value="<?php echo $nota['promedio']; ?>" disabled></td>
 							<th style="width: 60px;" ><input class="buttonSaveNote" style="background-color: #0084ff; color: #fff; outline: none; border:none; padding: 5px; border-radius: 100px; font-size: 12px" type="button" value="Guardar"></th>
 						</tr>
-					<?php endforeach; ?>
-				</tbody>
-			</table>
-		</div>
+					</tbody>
+				</table>
+			</div>
+		<?php endif; ?>
 	</div>
 </div>
 <script src="js/table.js"></script>

@@ -44,4 +44,13 @@
 		return $promedio->fetch();
 	}
 
+	// Inspecting data text
+	function limpiar_dato($datos) {
+		$datos = trim($datos);
+		$datos = stripslashes($datos);
+		$datos = htmlspecialchars($datos);
+
+		return $datos;
+	}
+
  ?>

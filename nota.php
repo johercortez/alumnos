@@ -11,9 +11,11 @@ if (isset($_SESSION['usuario'])) {
   $conexion = conexion($bd_config);
 
   if ($_SESSION['tipo_usuario'] === 'secretaria') {
+    $_SESSION['curso'] = $_GET['curso'];
+    $_SESSION['ciclo'] = $_GET['ciclo'];
     $course = tipo_promedio($_GET['curso'], $conexion);
     $notas = obtener_notas($_GET['ciclo'], $_GET['curso'], $conexion);
-  	require 'views/tableEditable.view.php';
+    require 'views/tableEditable.view.php';
   } else {
     $course = tipo_promedio($_GET['curso'], $conexion);
     $nota = obtener_nota($_GET['ciclo'], $_GET['curso'], $_SESSION['id_usuario'], $conexion);
