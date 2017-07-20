@@ -1,10 +1,14 @@
 <?php
 
 session_start();
-require 'config.php';
 
 if (isset($_SESSION['usuario']) && $_SESSION['tipo_usuario'] === 'secretaria') {
-  require 'views/header.view.php';
+	require 'config.php';
+	require 'functions.php';
+
+	$conexion = conexion($bd_config);
+  	require 'views/head.view.php';
+  	require 'views/header.view.php';
 
 	require 'views/nuevo_usuario.view.php';
 

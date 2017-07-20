@@ -4,11 +4,12 @@ session_start();
 
 if (isset($_SESSION['usuario']) && $_SESSION['tipo_usuario'] === 'secretaria') {
 
-  require 'config.php';
-  require 'functions.php';
-  require 'views/header.view.php';
+	require 'config.php';
+	require 'functions.php';
+	$conexion = conexion($bd_config);
 
-  $conexion = conexion($bd_config);
+	require 'views/head.view.php';
+	require 'views/header.view.php';
 
 	$curso = $_SESSION['curso'];
 	$ciclo = $_SESSION['ciclo'];

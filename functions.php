@@ -17,6 +17,12 @@
 		return $ciclo->fetchAll();
 	}
 
+	function obtener_cursos($conexion){
+		$curso = $conexion -> prepare('SELECT * FROM curso');
+		$curso->execute();
+		return $curso->fetchAll();
+	}
+
 	// Obtener notas
 	function obtener_notas($ciclo, $curso, $conexion){
 

@@ -6,10 +6,11 @@
 
     require 'config.php';
     require 'functions.php';
+    $conexion = conexion($bd_config);
     
+    require 'views/head.view.php';
     require 'views/header.view.php';
 
-    $conexion = conexion($bd_config);
 
     if ($_SESSION['tipo_usuario'] === 'secretaria') {
       $_SESSION['curso'] = $_GET['curso'];

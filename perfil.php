@@ -1,12 +1,15 @@
 <?php 
 
-	require 'config.php';
-	require 'functions.php';
 
 	session_start();
 
 	// Verificación de sesión usuario
 	if (isset($_SESSION['usuario'])) {
+		require 'config.php';
+	    require 'functions.php';
+
+	    $conexion = conexion($bd_config);
+	  	require 'views/head.view.php';
 	  	require 'views/header.view.php';
 
 	    require 'views/perfil.view.php';
