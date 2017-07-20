@@ -1,10 +1,9 @@
 <?php 
 
 	session_start();
+	require 'config.php';
 
-	if ($_SESSION['usuario']) {
-		
-		require 'config.php';
+	if ($_SESSION['usuario']) {		
 
 		$connect = new mysqli('localhost', $bd_config['usuario'], $bd_config['pass'], $bd_config['basededatos']);
 

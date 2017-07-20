@@ -1,10 +1,10 @@
 <?php
 
   session_start();
+  require 'config.php';
 
   if (isset($_SESSION['usuario'])) {
 
-    require 'config.php';
     require 'functions.php';
     $conexion = conexion($bd_config);
     

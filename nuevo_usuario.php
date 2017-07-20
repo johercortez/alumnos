@@ -1,9 +1,9 @@
 <?php
 
 session_start();
+require 'config.php';
 
 if (isset($_SESSION['usuario']) && $_SESSION['tipo_usuario'] === 'secretaria') {
-	require 'config.php';
 	require 'functions.php';
 
 	$conexion = conexion($bd_config);
