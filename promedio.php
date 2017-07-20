@@ -29,7 +29,7 @@
 			echo json_encode($response);
 		}
 	} else {
-		header('Location: index');
+		header('Location: '.RUTA);
 		$response = array();
 		$response['success'] = false;
 	}

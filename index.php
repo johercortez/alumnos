@@ -7,7 +7,7 @@
 
   // Verificación de sesión usuario
   if (isset($_SESSION['usuario'])) {
-    header('Location: home');
+    header('Location: '.RUTA);
   }
 
   $errores = '';
@@ -29,7 +29,7 @@
 
     if ($resultado !== false) {
 
-      echo "logueo exitoso";
+      print("logueo exitoso");
 
       $_SESSION['usuario'] = $resultado['usuario'];
       $_SESSION['tipo_usuario'] = $resultado['tipo_usuario'];
@@ -41,10 +41,10 @@
       $_SESSION['telefono'] = $resultado['telefono'];
       $_SESSION['email'] = $resultado['email'];
 
-      header('Location: home');
+      header('Location: '.RUTA.'/home');
     } else {
       $errores .= '<li style="color:red;">El nombre de usuario o contraseña son erróneos</li>';
-      header('Location: index');
+      // header('Location: '.RUTA);
     }
   }
 

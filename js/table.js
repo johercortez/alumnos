@@ -112,10 +112,35 @@
     function saveData(){
 
         data = selectData($(this)[0]);
+        console.log(data)
         saveNote(data).success(function(res){
-            console.log(res)
+            res = JSON.parse(res)
+            if (res.success) {
+                if (data.pro !== 0 && data !== null && data !== undefined) {
+                    var promedio = $('.pro_'+data.id_nota)
+                    promedio.val(data.pro)
+                }
+
+                var dialog = document.createElement('div')
+                dialog.setAttribute('id', 'toast-container')
+                dialog.innerHTML = `<div class="toast rounded" style="top: 0px; opacity: 1; background-color: #26a69a;">Se ha guadado los datos con éxito.</div>`
+                document.querySelector('body').appendChild(dialog)
+                setTimeout(function(){
+                    $("#toast-container").fadeOut(3000, function(){
+                        $("#toast-container").remove()
+                    })
+                },2000)
+            }
         }).error(function(err){
-            console.log(err)
+            var dialog = document.createElement('div')
+            dialog.setAttribute('id', 'toast-container')
+            dialog.innerHTML = `<div class="toast rounded" style="top: 0px; opacity: 1; background-color: #ee6e73;">Ocurrió algo al momento de guardar!</div>`
+            document.querySelector('body').appendChild(dialog)
+            setTimeout(function(){
+                $("#toast-container").fadeOut(3000, function(){
+                    $("#toast-container").remove()
+                })
+            },2000)
         })
 
 

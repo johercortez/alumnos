@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+require 'config.php';
 
 if (isset($_SESSION['usuario']) && $_SESSION['tipo_usuario'] === 'secretaria') {
   require 'views/header.view.php';
@@ -9,7 +10,7 @@ if (isset($_SESSION['usuario']) && $_SESSION['tipo_usuario'] === 'secretaria') {
 
   require 'views/footer.view.php';
 } else {
-  header('Location: index');
+  header('Location: '.RUTA);
 }
 
 

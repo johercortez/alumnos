@@ -1,5 +1,6 @@
 <?php 
-
+	
+	// Conexion con base de datos
 	function conexion($bd_config){
 		try {
 			$conexion = new PDO('mysql:host=localhost;dbname='.$bd_config['basededatos'], $bd_config['usuario'], $bd_config['pass']);
@@ -9,12 +10,14 @@
 		}		
 	}
 
+	// Obtener ciclos
 	function obtener_ciclos($conexion){
 		$ciclo = $conexion -> prepare('SELECT * FROM ciclo');
 		$ciclo->execute();
 		return $ciclo->fetchAll();
 	}
 
+	// Obtener notas
 	function obtener_notas($ciclo, $curso, $conexion){
 
 		$notas = $conexion -> prepare('SELECT * FROM nota WHERE id_curso = :course AND id_ciclo = :cycle');
@@ -25,6 +28,7 @@
 		return $notas->fetchAll();
 	}
 
+	// Obtener nota de alumno en especifico
 	function obtener_nota($ciclo, $curso, $id_user, $conexion){
 		$nota = $conexion -> prepare('SELECT * FROM nota WHERE id_curso = :course AND id_ciclo = :cycle AND id_usuario = :id_user LIMIT 1');
 		$nota->execute(array(
@@ -35,6 +39,7 @@
 		return $nota->fetchAll();
 	}
 
+	// obtener tipo de promedio
 	function tipo_promedio($curso, $conexion) {
 		$promedio = $conexion -> prepare('SELECT * FROM curso WHERE id_curso = :course');
 		$promedio -> execute(array(

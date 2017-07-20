@@ -50,12 +50,15 @@
 										<label for="telefono">Teléfono</label>
 									</div>
 								</div>
+								<div>
+									<p id="message_new_user"></p>
+								</div>
 								<br>
 								<div class="row">
 									<div class="col s12 center-align">
 										<button id="sendata" class="btn waves-effect waves-light" type="submit">Registrar</button>
 										<span style="padding:0 20px;"></span>
-										<a href="index" class="waves-effect waves-light btn">Cancelar</a>
+										<a href="<?php echo RUTA; ?>/home" class="waves-effect waves-light btn">Cancelar</a>
 									</div>
 								</div>
 							</form>
@@ -63,4 +66,4 @@
 				</div>
 		</div>
 </div>
-<script src="js/new_user.js"></script>
+<script src="<?php echo RUTA; ?>/js/new_user.js"></script>

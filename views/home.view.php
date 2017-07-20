@@ -2,7 +2,7 @@
     <div class="col s12 m12">
       <div class="card">
         <div class="card-image">
-            <img src="assets/img/bannerSistemas.jpg">
+            <img src="<?php echo RUTA; ?>/assets/img/bannerSistemas.jpg">
             <span class="card-title" style="font-weight: bold;text-shadow: 0px 0px 5px #00294c;color: #c7f7ff;">La carrera de Ingeniería de Sistemas forma Ingenieros capaces de desarrollar grandes proyectos tecnológicos y sistemas de información eficaces y de alta calidad en las empresas. De acuerdo con la tendencia internacional, la FIS de la UNICA emplea metodologías especializadas en el desarrollo de los conocimientos adquiridos por el alumno, con el fin de potenciar su capacidad de innovación y prepararlo en la gestión y dirección de proyectos corporativos o propios.​​​</span>
         </div>
       </div>

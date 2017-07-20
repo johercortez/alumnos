@@ -36,6 +36,9 @@
 									<label for="telefono">Teléfono</label>
 								</div>
 							</div>
+							<div>
+								<p id="edit_user"></p>
+							</div>
 							<br>
 							<div class="row">
 								<div class="col s12 center-align">
@@ -73,6 +76,10 @@
 									<label for="contraseña2">Confirmar nueva contraseña</label>
 								</div>
 							</div>
+							<div>
+								<p id="change_password"></p>
+							</div>
+							<br>
 							<div class="row">
 								<div class="col s12 center-align">
 									<button id="updatePassword" class="btn waves-effect waves-light" type="submit">Cambiar</button>
@@ -85,4 +92,4 @@
 			</div>
 		</div>
 </div>
-<script src="js/perfil.js"></script>
+<script src="<?php echo RUTA; ?>/js/perfil.js"></script>
